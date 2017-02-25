@@ -35,10 +35,10 @@ router.get('/add', (req, res, next) => {
 router.post('/add', (req, res, next) => {
 
   let newBook = book({
-    "title": req.body.title,
-    "description": req.body.description,
-    "price": req.body.price,
-    "genre": req.body.genre
+    "Title": req.body.Title,
+    "Tescription": req.body.Description,
+    "Price": req.body.Price,
+    "Genre": req.body.Genre
   });
   book.create(newBook, (err, book)=>{
     if(err){
@@ -46,7 +46,7 @@ router.post('/add', (req, res, next) => {
       res.end(err);
     }else{
       res.render.redirect('/books');
-    }
+      }
     });
   });
 
