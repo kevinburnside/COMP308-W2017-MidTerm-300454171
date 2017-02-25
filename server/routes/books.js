@@ -45,7 +45,7 @@ router.post('/add', (req, res, next) => {
       console.log(err);
       res.end(err);
     }else{
-      res.render.redirect('/books');
+      res.redirect('/books');
       }
     });
   });
@@ -62,9 +62,9 @@ router.get('/:id', (req, res, next) => {
           console.log(err);
           res.end(error);
         } else {
-          // show the game details view
+          // show the book details view
           res.render('books/details', {
-              title: 'Book Details',
+              title: 'Edit Details',
               books: books            
           });
         }
