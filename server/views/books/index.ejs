@@ -33,11 +33,13 @@
 
                   <td class="text-center">
                     <a href="/books/<%= books[count]._id %>" class="btn btn-primary">
+                    <i class="fa fa-pencil-square-o"></i> Edit</a>
                   </td>
 
                   <td class="text-center">
                      <a href="/books/delete/<%= books[count]._id %>" class="btn btn-danger">
-                  </td>
+                      <i class="fa fa-trash-o"></i> Delete</a>
+              </td>
                 </tr>
                 <% } %>
               </tbody>
