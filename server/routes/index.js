@@ -24,7 +24,8 @@ function requireAuth(req, res, next) {
 router.get('/', (req, res, next) => {
   res.render('content/index', {
     title: 'Home',
-    books: ''
+    books: '',
+     displayName: req.user ? req.user.displayName : ''
    });
 });
 // GET /login - render the login view
