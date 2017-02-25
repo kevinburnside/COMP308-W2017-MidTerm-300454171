@@ -35,10 +35,10 @@ router.get('/add', (req, res, next) => {
 router.post('/add', (req, res, next) => {
 
   let newBook = book({
-    "Title": req.body.Title,
-    "Tescription": req.body.Description,
-    "Price": req.body.Price,
-    "Genre": req.body.Genre
+    "Title": req.body.title,    
+    "Price": req.body.price,
+    "Author":req.body.author,
+    "Genre": req.body.genre
   });
   book.create(newBook, (err, book)=>{
     if(err){
@@ -80,11 +80,13 @@ router.post('/:id', (req, res, next) => {
     let id = req.params.id;
 
     let updatedBook = book({
-      "title": req.body.title,
-    "description": req.body.description,
-    "price": req.body.price,
-    "genre": req.body.genre
-    });
+      "_id": id,
+    "Title": req.body.title,    
+    "Price": req.body.price,
+    "Author":req.body.author,
+    "Genre": req.body.genre
+  });
+  
 book.update({_id: id}, updatedBook, (err) => {
       if(err) {
         console.log(err);
@@ -106,7 +108,7 @@ let id = req.params.id;
         res.end(err);
       } else {
         // refresh the books list
-        res.redirect('/book');
+        res.redirect('/books');
       }
     });
 });
