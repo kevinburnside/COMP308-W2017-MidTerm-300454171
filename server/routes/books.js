@@ -16,8 +16,7 @@ router.get('/', (req, res, next) => {
     else {
       res.render('books/index', {
         title: 'Books',
-        books: books,
-        displayName: req.user.displayName,
+        books: books
       });
     }
   });
@@ -26,10 +25,9 @@ router.get('/', (req, res, next) => {
 
 //  GET the Book Details page in order to add a new Book
 router.get('/add', (req, res, next) => {
-  res.render('books/details',{
+  res.render('books/details', {
     title: "Add a new book",
-    books: '',
-    displayName: req.user.displayName,
+    books: ''
     });
 });
 
