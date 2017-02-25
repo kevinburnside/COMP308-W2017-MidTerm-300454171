@@ -34,7 +34,7 @@ router.get('/login', (req, res, next)=>{
     // render the login page
     res.render('auth/login', {
       title: "Login",
-      games: '',
+      books: '',
       messages: req.flash('loginMessage'),
       displayName: req.user ? req.user.displayName : ''
     });
